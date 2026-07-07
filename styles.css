@@ -496,19 +496,267 @@ a {
   }
 }
 
+@media (max-width: 900px) {
+  body {
+    font-size: 15px;
+  }
+
+  .hero-copy {
+    top: 80px;
+  }
+
+  .hero-copy h1 {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+  }
+
+  .enter-button,
+  .primary-button {
+    padding: 14px 20px;
+    font-size: 0.8rem;
+    min-height: 40px;
+  }
+
+  .gallery-section,
+  .contact-section {
+    padding: 60px 24px;
+  }
+
+  .gallery-section h2,
+  .contact-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .section-intro,
+  .contact-copy {
+    margin-bottom: 40px;
+  }
+
+  .contact-card {
+    padding: 32px 24px;
+  }
+
+  .contact-form {
+    gap: 20px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 14px 12px 10px;
+    font-size: 1rem;
+  }
+
+  .radio-group {
+    padding: 20px;
+    gap: 12px;
+  }
+
+  .radio-group label {
+    font-size: 0.9rem;
+    gap: 12px;
+  }
+
+  .modal-card {
+    padding: 32px 24px;
+  }
+
+  .modal-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+  }
+
+  .modal-text {
+    font-size: 0.95rem;
+  }
+
+  .photo-grid {
+    column-count: 2;
+    column-gap: 10px;
+  }
+
+  .photo-card {
+    margin-bottom: 10px;
+  }
+}
+
 @media (max-width: 640px) {
+  body {
+    font-size: 14px;
+  }
+
   .nav-bar {
     flex-direction: column;
     align-items: flex-start;
+    gap: 10px;
+    padding: 12px 16px;
+  }
+
+  .brand {
+    font-size: 1.1rem;
+  }
+
+  .nav-bar nav {
+    gap: 16px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .nav-bar a {
+    font-size: 0.75rem;
+  }
+
+  .hero-section {
+    min-height: 80vh;
+  }
+
+  .hero-copy {
+    top: 60px;
+    padding: 0 16px;
+  }
+
+  .hero-copy h1 {
+    font-size: 1.4rem;
+    margin-bottom: 14px;
+    line-height: 1.1;
+  }
+
+  .enter-button,
+  .primary-button {
+    padding: 12px 18px;
+    font-size: 0.75rem;
+    min-height: 40px;
+  }
+
+  .gallery-section,
+  .contact-section {
+    padding: 48px 16px;
+  }
+
+  .gallery-section h2,
+  .contact-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .section-intro,
+  .contact-copy {
+    max-width: 100%;
+    margin-bottom: 32px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .contact-card {
+    padding: 24px 16px;
+  }
+
+  .contact-card::before {
+    width: 24px;
+  }
+
+  .contact-form {
+    gap: 18px;
+  }
+
+  .contact-form label {
+    font-size: 0.7rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px 10px 8px;
+    font-size: 16px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .contact-form textarea {
+    min-height: 140px;
+  }
+
+  .radio-group {
+    padding: 16px;
+    gap: 10px;
+  }
+
+  .radio-group p {
+    font-size: 0.7rem;
+    margin-bottom: 4px;
+  }
+
+  .radio-group label {
+    font-size: 0.85rem;
+    gap: 10px;
+    padding-bottom: 4px;
+  }
+
+  .radio-group input {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+  }
+
+  .form-footer {
     gap: 12px;
+  }
+
+  .primary-button {
+    width: 100%;
+  }
+
+  .help-text {
+    font-size: 0.75rem;
+  }
+
+  .submit-notice {
+    font-size: 0.9rem;
+  }
+
+  .modal-overlay {
+    padding: 20px;
+  }
+
+  .modal-card {
+    width: 100%;
+    padding: 24px 16px;
+  }
+
+  .modal-eyebrow {
+    font-size: 0.7rem;
+  }
+
+  .modal-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .modal-text {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  .secondary-button {
+    width: 100%;
+    padding: 12px 16px;
   }
 
   .photo-grid {
     column-count: 1;
+    column-gap: 8px;
+  }
+
+  .photo-card {
+    margin-bottom: 8px;
   }
 
   .site-footer {
     flex-direction: column;
     align-items: flex-start;
+    padding: 32px 16px;
+    gap: 12px;
+  }
+
+  .site-footer a {
+    font-size: 0.85rem;
   }
 }
