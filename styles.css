@@ -482,23 +482,12 @@ a {
 }
 
 @media (max-width: 900px) {
-  .nav-bar {
-    padding: 16px 24px;
-  }
-
-  .gallery-section,
-  .contact-section {
-    padding: 60px 24px;
-  }
-
-  .photo-grid {
-    column-count: 2;
-  }
-}
-
-@media (max-width: 900px) {
   body {
     font-size: 15px;
+  }
+
+  .nav-bar {
+    padding: 16px 24px;
   }
 
   .hero-copy {
@@ -520,6 +509,7 @@ a {
   .gallery-section,
   .contact-section {
     padding: 60px 24px;
+    padding-top: 120px;
   }
 
   .gallery-section h2,
