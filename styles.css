@@ -161,8 +161,7 @@ a {
 /* Contact grid and card styling for a more editorial, polished look */
 .contact-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) 420px;
-  gap: 48px;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);  gap: 48px;
   align-items: start;
 }
 
@@ -192,11 +191,13 @@ a {
 
 .contact-card {
   background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   padding: 40px;
-  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
   align-self: start;
   position: relative;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .contact-card::before {
@@ -750,12 +751,4 @@ a {
   .site-footer a {
     font-size: 0.85rem;
   }
-}
-html,
-body {
-  overflow-x: hidden;
-  overflow-y: auto;
-  min-height: 100%;
-  height: auto;
-  -webkit-overflow-scrolling: touch;
 }
