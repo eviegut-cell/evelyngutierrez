@@ -599,11 +599,12 @@ a {
     min-height: 80vh;
   }
 
+@media (max-width: 640px) {
   .hero-copy {
-    top: 60px;
+    top: 130px; /* Adjust between 110-160px until you like it */
     padding: 0 16px;
   }
-
+}
   .hero-copy h1 {
     font-size: 1.4rem;
     margin-bottom: 14px;
@@ -749,4 +750,12 @@ a {
   .site-footer a {
     font-size: 0.85rem;
   }
+}
+html,
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100%;
+  height: auto;
+  -webkit-overflow-scrolling: touch;
 }
