@@ -77,7 +77,7 @@ a {
   place-items: center;
   text-align: center;
   position: relative;
-  background-image: url('./IMG_5886.jpeg');
+  background-image: url('./IMG_0122.jpg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -110,7 +110,7 @@ a {
   letter-spacing: 0.02em;
   font-weight: 400;
   text-transform: uppercase;
-  color: #000000;
+  color: #ffffff;
 }
 
 .enter-button,
@@ -121,7 +121,7 @@ a {
   min-height: 44px;
   padding: 0 24px;
   border: 1px solid var(--van-text-color);
-  color: var(--van-text-color);
+  color: #ffffff;
   background: transparent;
   text-transform: uppercase;
   letter-spacing: 0.05em;
