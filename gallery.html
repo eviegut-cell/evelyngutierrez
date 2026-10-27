@@ -24,36 +24,71 @@
         <p class="eyebrow">portfolio</p>
       </div>
 
-      <div class="photo-grid">
-        <img src="./IMG_2659.jpeg" alt="gallery photo" class="photo-card" />
-        <img src="./4.jpg" alt="gallery photo" class="photo-card" />
-        <img src="./6.jpg" alt="gallery photo" class="photo-card" />
-        <img src="./5.jpg" alt="gallery photo" class="photo-card" />
-        <img src="./533A2230.jpeg" alt="gallery photo" class="photo-card" />
-        <img src="./IMG_5887.jpeg" alt="gallery photo" class="photo-card" />
-        <img src="./1.jpg" alt="gallery photo" class="photo-card" />
-        <img src=".2.jpg" alt="gallery photo" class="photo-card" />
-        <img src="./3.jpg" alt="gallery photo" class="photo-card" />
-        <img src="./IMG_5898.jpeg" alt="gallery photo" class="photo-card" />
-        <img src="./thumbnail.jpg" alt="gallery photo" class="photo-card" />
-        <img src="./thumbnail (3).jpg" alt="gallery photo" class="photo-card" />
-        <img src="./533A7433.jpeg" alt="gallery photo" class="photo-card" />
-        <img src="./533A7334.jpeg" alt="gallery photo" class="photo-card" />
-        <img src="./533A2849.jpg" alt="gallery photo" class="photo-card" />
-        <img src="./533A7087.jpg" alt="gallery photo" class="photo-card" />
-        <img src="./IMG_0122.jpg" alt="gallery photo" class="photo-card" />
-        <img src="./IMG_5894.jpeg" alt="gallery photo" class="photo-card" />
-        <img src="./533A2447.jpeg" alt="gallery photo" class="photo-card" />
-        <img src="./IMG_0030.jpg" alt="gallery photo" class="photo-card" />
-        <img src="./IMG_5889.jpeg" alt="gallery photo" class="photo-card" />
-        <img src="./thumbnail (1).jpg" alt="gallery photo" class="photo-card" />
-        <img src="./533A2362.jpg" alt="gallery photo" class="photo-card" />
-        <img src="./IMG_5891.jpeg" alt="gallery photo" class="photo-card" />
-        <img src="./IMG_5283.jpeg" alt="gallery photo" class="photo-card" />
-        <img src="./IMG_5890.jpeg" alt="gallery photo" class="photo-card" />
-        <img src="./IMG_0006.jpg" alt="gallery photo" class="photo-card" />
+      <div class="photo-grid" id="photoGrid"></div>
 
-      </div>
+      <script>
+        const photos = [
+          "./1.jpg",
+          "./2.jpg",
+          "./3.jpg",
+          "./4.jpg",
+          "./5.jpg",
+          "./6.jpg",
+          "./1791808444290.jpg",
+          "./533A2230.jpeg",
+          "./533A2352.jpg",
+          "./533A2362.jpg",
+          "./533A2447.jpeg",
+          "./533A2451.jpg",
+          "./533A2606.jpg",
+          "./533A2849.jpg",
+          "./533A6844.jpg",
+          "./533A7087.jpg",
+          "./533A7134.jpeg",
+          "./533A7334.jpeg",
+          "./533A7433.jpeg",
+          "./533A7468.jpeg",
+          "./533A7655.jpeg",
+          "./533A7699.jpeg",
+          "./IMG_0006.jpg",
+          "./IMG_0030.jpg",
+          "./IMG_0122.jpg",
+          "./IMG_0666.jpg",
+          "./IMG_0722.jpg",
+          "./IMG_0728.jpg",
+          "./IMG_2659.jpeg",
+          "./IMG_5283.jpeg",
+          "./IMG_5886.jpeg",
+          "./IMG_5887.jpeg",
+          "./IMG_5889.jpeg",
+          "./IMG_5890.jpeg",
+          "./IMG_5891.jpeg",
+          "./IMG_5894.jpeg",
+          "./IMG_5898.jpeg"
+        ];
+
+        function shuffle(items) {
+          const shuffled = [...items];
+          for (let i = shuffled.length - 1; i > 0; i -= 1) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+          }
+          return shuffled;
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+          const grid = document.getElementById("photoGrid");
+          const randomizedPhotos = shuffle(photos);
+
+          randomizedPhotos.forEach((src) => {
+            const img = document.createElement("img");
+            img.src = src;
+            img.alt = "gallery photo";
+            img.className = "photo-card";
+            grid.appendChild(img);
+          });
+        });
+      </script>
     </section>
   </main>
 
