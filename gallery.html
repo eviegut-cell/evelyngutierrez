@@ -24,16 +24,6 @@
 
   <main>
     <section class="gallery-section">
-      <div class="gallery-tools">
-        <button class="reorder-toggle" id="reorderToggle" type="button" aria-pressed="false">Reorder photos</button>
-        <div class="order-layout-controls" id="orderLayoutControls" hidden>
-          <button class="order-layout-button" type="button" data-layout="mobile" aria-pressed="false">Mobile order</button>
-          <button class="order-layout-button" type="button" data-layout="desktop" aria-pressed="false">Desktop order</button>
-        </div>
-        <button class="copy-photo-order" id="copyPhotoOrder" type="button" hidden>Copy photo order</button>
-        <p class="reorder-status" id="reorderStatus" role="status" aria-live="polite"></p>
-        <textarea class="photo-order-output" id="photoOrderOutput" aria-label="Updated photo order" readonly hidden></textarea>
-      </div>
       <div class="photo-grid" id="photoGrid"></div>
 
       <script>
@@ -127,6 +117,5 @@
     <a href="contact.html">Book a session</a>
   </footer>
   <script src="site-menu.js"></script>
-  <script src="gallery-editor.js"></script>
 </body>
 </html>
