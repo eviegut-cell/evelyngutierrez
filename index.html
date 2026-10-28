@@ -10,21 +10,27 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <header class="nav-bar">
+    <a class="brand" href="index.html">Evelyn Gutierrez</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="siteMenu" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-menu" id="siteMenu" aria-label="Main navigation" hidden>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
   <main>
     <section id="hero" class="hero-section">
       <div class="hero-overlay"></div>
       <div class="hero-copy">
-        <p class="eyebrow">photography</p>
         <h1>Evelyn Gutierrez</h1>
         <a class="enter-button" href="gallery.html">Enter</a>
       </div>
     </section>
-      
   </main>
-
-  <footer class="site-footer">
-    <a href="contact.html">Book a session</a>
-  </footer>
+  <script src="site-menu.js"></script>
 </body>
 </html>

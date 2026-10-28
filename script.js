@@ -3,17 +3,10 @@ const emailInput = document.getElementById('email');
 const messageInput = document.getElementById('message');
 
 form.addEventListener('submit', event => {
-  const inquiry = form.inquiry.value;
-  if (!inquiry) {
-    event.preventDefault();
-    alert('Please select the type of session you are inquiring about.');
-    return;
-  }
-
   const email = emailInput.value.trim();
   if (!email) {
     event.preventDefault();
-    alert('Please enter your email so I can send your package details.');
+    alert('Please enter your email so I can reply.');
     return;
   }
 
@@ -62,7 +55,7 @@ form.addEventListener('submit', event => {
     .finally(() => {
       if (submitButton) {
         submitButton.disabled = false;
-        submitButton.textContent = 'Send inquiry';
+        submitButton.textContent = 'Send a note';
       }
       setTimeout(() => {
         if (notice) {

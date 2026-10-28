@@ -12,70 +12,112 @@
 <body>
   <header class="nav-bar">
     <a class="brand" href="index.html">Evelyn Gutierrez</a>
-    <nav>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="siteMenu" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-menu" id="siteMenu" aria-label="Main navigation" hidden>
       <a href="index.html">Home</a>
+      <a href="gallery.html" aria-current="page">Portfolio</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <main>
-    <section class="gallery-section" style="padding-top:120px;">
-      <div class="section-intro">
-        <p class="eyebrow">portfolio</p>
+    <section class="gallery-section">
+      <div class="gallery-tools">
+        <button class="reorder-toggle" id="reorderToggle" type="button" aria-pressed="false">Reorder photos</button>
+        <div class="order-layout-controls" id="orderLayoutControls" hidden>
+          <button class="order-layout-button" type="button" data-layout="mobile" aria-pressed="false">Mobile order</button>
+          <button class="order-layout-button" type="button" data-layout="desktop" aria-pressed="false">Desktop order</button>
+        </div>
+        <button class="copy-photo-order" id="copyPhotoOrder" type="button" hidden>Copy photo order</button>
+        <p class="reorder-status" id="reorderStatus" role="status" aria-live="polite"></p>
+        <textarea class="photo-order-output" id="photoOrderOutput" aria-label="Updated photo order" readonly hidden></textarea>
       </div>
-
       <div class="photo-grid" id="photoGrid"></div>
 
       <script>
-        const photos = [
+        const mobilePhotos = [
           "./photos/IMG_0722.jpg",
-          "./photos/533A7655.jpeg",
           "./photos/533A2451.jpg",
-          "./photos/2.jpg",
-          "./photos/3.jpg",
-          "./photos/4.jpg",
-          "./photos/6.jpg",
-          "./photos/533A2230.jpeg",
-          "./photos/533A2352.jpg",
-          "./photos/533A2606.jpg",
-          "./photos/533A6844.jpg",
           "./photos/533A7134.jpeg",
-          "./photos/533A7334.jpeg",
-          "./photos/533A7433.jpeg",
-          "./photos/533A7468.jpeg",
-          "./photos/533A7699.jpeg",
-          "./photos/IMG_0006.jpg",
-          "./photos/IMG_0122.jpg",
           "./photos/IMG_0666.jpg",
+          "./photos/533A6844.jpg",
+          "./photos/533A7468.jpeg",
+          "./photos/533A8606.JPG",
+          "./photos/533A8712.JPG",
+          "./photos/533A6073.jpg",
+          "./photos/533A8309.JPG",
+          "./photos/IMG_2014.jpeg",
+          "./photos/2.jpg",
+          "./photos/4.jpg",
+          "./photos/533A2230.jpeg",
+          "./photos/533A8109.JPG",
+          "./photos/533A7655.jpeg",
+          "./photos/533A8356.JPG",
+          "./photos/533A2465.jpg",
+          "./photos/533A2352.jpg",
+          "./photos/533A7699.jpeg",
           "./photos/IMG_0728.jpg",
-          "./photos/IMG_2659.jpeg",
-          "./photos/IMG_5887.jpeg",
-          "./photos/IMG_5889.jpeg",
+          "./photos/533A2606.jpg",
           "./photos/IMG_5898.jpeg",
-          "./photos/1.jpg",
-          "./photos/5.jpg"
+          "./photos/533A8098.JPG",
+          "./photos/IMG_2659.jpeg",
+          "./photos/IMG_0122.jpg",
+          "./photos/IMG_0006.jpg"
         ];
 
-        function shuffle(items) {
-          const shuffled = [...items];
-          for (let i = shuffled.length - 1; i > 0; i -= 1) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-          }
-          return shuffled;
-        }
+        const desktopPhotos = [
+          "./photos/IMG_0722.jpg",
+          "./photos/533A2451.jpg",
+          "./photos/533A7468.jpeg",
+          "./photos/533A6844.jpg",
+          "./photos/533A7655.jpeg",
+          "./photos/IMG_0666.jpg",
+          "./photos/533A8606.JPG",
+          "./photos/533A7134.jpeg",
+          "./photos/533A6073.jpg",
+          "./photos/533A8109.JPG",
+          "./photos/533A8712.JPG",
+          "./photos/533A2465.jpg",
+          "./photos/533A8309.JPG",
+          "./photos/4.jpg",
+          "./photos/IMG_0728.jpg",
+          "./photos/533A2352.jpg",
+          "./photos/533A2606.jpg",
+          "./photos/533A2230.jpeg",
+          "./photos/533A8356.JPG",
+          "./photos/533A8098.JPG",
+          "./photos/533A7699.jpeg",
+          "./photos/2.jpg",
+          "./photos/IMG_5898.jpeg",
+          "./photos/IMG_2014.jpeg",
+          "./photos/IMG_0122.jpg",
+          "./photos/IMG_0006.jpg",
+          "./photos/IMG_2659.jpeg"
+        ];
+        const galleryPhotoOrders = { mobile: mobilePhotos, desktop: desktopPhotos };
+        const galleryGrid = document.getElementById("photoGrid");
 
-        document.addEventListener("DOMContentLoaded", () => {
-          const grid = document.getElementById("photoGrid");
-          const randomizedPhotos = shuffle(photos);
-
-          randomizedPhotos.forEach((src) => {
+        function renderGalleryPhotos(photos) {
+          galleryGrid.replaceChildren();
+          photos.forEach((src) => {
             const img = document.createElement("img");
             img.src = src;
-            img.alt = "gallery photo";
+            img.alt = "Photograph from Evelyn Gutierrez's portfolio";
             img.className = "photo-card";
-            grid.appendChild(img);
+            img.loading = "lazy";
+            img.decoding = "async";
+            galleryGrid.appendChild(img);
           });
+        }
+
+        window.galleryPhotoOrders = galleryPhotoOrders;
+        window.renderGalleryPhotos = renderGalleryPhotos;
+
+        document.addEventListener("DOMContentLoaded", () => {
+          const layout = window.matchMedia("(max-width: 600px)").matches ? "mobile" : "desktop";
+          renderGalleryPhotos(galleryPhotoOrders[layout]);
         });
       </script>
     </section>
@@ -84,5 +126,7 @@
   <footer class="site-footer">
     <a href="contact.html">Book a session</a>
   </footer>
+  <script src="site-menu.js"></script>
+  <script src="gallery-editor.js"></script>
 </body>
 </html>
